@@ -8,6 +8,7 @@ import html from 'remark-html'
 export async function generateStaticParams() {
   try {
     const posts = getAllPosts()
+    // Generate static params for ALL posts, not just the filtered ones
     return posts.map((post) => ({
       slug: post.slug,
     }))
@@ -17,13 +18,17 @@ export async function generateStaticParams() {
   }
 }
 
+// Disable dynamic params to ensure all routes are pre-rendered
+export const dynamicParams = false
+
 export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }> | { slug: string }
 }) {
-  const { slug } = await params
-  const post = getPostBySlug(slug)
+  // Handle both Promise and direct params for Next.js 16 compatibility
+  const resolvedParams = params instanceof Promise ? await params : params
+  const post = getPostBySlug(resolvedParams.slug)
 
   if (!post) {
     notFound()
