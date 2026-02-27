@@ -14,7 +14,7 @@ export default function PrimaryButton({ children, onClick }: PrimaryButtonProps)
       onClick={onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="px-8 py-3.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold shadow-glow hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 text-base"
+      className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold shadow-glow hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 text-sm sm:text-base touch-manipulation"
     >
       {children}
     </motion.button>

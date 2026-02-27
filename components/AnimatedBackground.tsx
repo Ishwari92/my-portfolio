@@ -10,7 +10,7 @@ export default function AnimatedBackground() {
       
       {/* Animated gradient orbs */}
       <motion.div
-        className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-full blur-3xl"
+        className="absolute top-0 left-1/4 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-full blur-3xl"
         animate={{
           x: [0, 100, 0],
           y: [0, 50, 0],
@@ -24,7 +24,7 @@ export default function AnimatedBackground() {
       />
       
       <motion.div
-        className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-orange-600/20 rounded-full blur-3xl"
+        className="absolute bottom-0 right-1/4 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-orange-600/20 rounded-full blur-3xl"
         animate={{
           x: [0, -80, 0],
           y: [0, -60, 0],
@@ -38,7 +38,7 @@ export default function AnimatedBackground() {
       />
       
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-cyan-600/15 to-blue-600/15 rounded-full blur-3xl"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[375px] sm:h-[375px] md:w-[500px] md:h-[500px] bg-gradient-to-r from-cyan-600/15 to-blue-600/15 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.3, 0.5, 0.3],

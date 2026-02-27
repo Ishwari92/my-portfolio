@@ -138,10 +138,10 @@ export default function AboutPage() {
   return (
     <PageTransition>
       <div className="min-h-screen relative">
-        <div className="container mx-auto px-6 py-20 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 max-w-6xl">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-12 group"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 sm:mb-12 group text-sm sm:text-base"
           >
             <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
             <span>Back to Home</span>
@@ -151,13 +151,13 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+            className="mb-8 sm:mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
           >
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gradient-primary">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-gradient-primary">
                 About Me
               </h1>
-              <p className="text-xl text-gray-400 max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl">
                 A Result-Oriented Web Developer building and managing Websites and Web Applications that lead to the success of the overall product.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
               onClick={handleResumeDownload}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 glass-strong border border-white/20 text-white rounded-xl font-semibold hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center gap-2 shadow-premium text-base self-start md:self-center"
+              className="w-full sm:w-auto px-6 py-3 glass-strong border border-white/20 text-white rounded-xl font-semibold hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-2 shadow-premium text-sm sm:text-base touch-manipulation"
             >
               <Download size={18} />
               <span>Download Resume</span>
@@ -173,14 +173,14 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Tabs */}
-          <div className="flex flex-wrap gap-4 mb-8 border-b border-white/10 pb-4">
+          <div className="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8 border-b border-white/10 pb-3 sm:pb-4 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
             {tabs.map((tab) => {
               const Icon = tab.icon
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base touch-manipulation whitespace-nowrap ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-blue-500/30 shadow-glow'
                       : 'text-gray-400 hover:text-white glass hover:bg-white/5'
@@ -219,26 +219,26 @@ export default function AboutPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: companyIndex * 0.1 }}
-                      className="glass-strong rounded-2xl p-6 md:p-8 shadow-premium"
+                      className="glass-strong rounded-2xl p-4 sm:p-6 md:p-8 shadow-premium"
                     >
                       {/* Company Header */}
-                      <div className="flex items-start gap-4 mb-6 pb-6 border-b border-white/10">
-                        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${colorClass} flex items-center justify-center text-white font-bold text-xl flex-shrink-0`}>
+                      <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-white/10">
+                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${colorClass} flex items-center justify-center text-white font-bold text-lg sm:text-xl flex-shrink-0`}>
                           {companyInitial}
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-white mb-2">{company.company}</h3>
-                          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{company.company}</h3>
+                          <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400">
                             <span className="flex items-center gap-1">
-                              <Calendar size={14} />
+                              <Calendar size={12} className="sm:w-3.5 sm:h-3.5" />
                               {company.totalDuration}
                             </span>
                             <span className="flex items-center gap-1">
-                              <MapPin size={14} />
-                              {company.location}
+                              <MapPin size={12} className="sm:w-3.5 sm:h-3.5" />
+                              <span className="truncate">{company.location}</span>
                             </span>
                             <span className="flex items-center gap-1">
-                              <Building2 size={14} />
+                              <Building2 size={12} className="sm:w-3.5 sm:h-3.5" />
                               {company.workType}
                             </span>
                           </div>
@@ -246,9 +246,9 @@ export default function AboutPage() {
                       </div>
 
                       {/* Timeline with Roles */}
-                      <div className="relative pl-8">
+                      <div className="relative pl-6 sm:pl-8">
                         {/* Vertical Timeline Line */}
-                        <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-pink-500/50" />
+                        <div className="absolute left-2 sm:left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-pink-500/50" />
                         
                         {company.roles.map((role, roleIndex) => {
                           const roleKey = `${companyIndex}-${roleIndex}`
@@ -260,20 +260,20 @@ export default function AboutPage() {
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.4, delay: roleIndex * 0.1 }}
-                              className="relative mb-8 last:mb-0"
+                              className="relative mb-6 sm:mb-8 last:mb-0"
                             >
                               {/* Timeline Marker */}
-                              <div className="absolute -left-11 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 border-4 border-gray-900 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-white" />
+                              <div className="absolute -left-8 sm:-left-11 top-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 border-2 sm:border-4 border-gray-900 flex items-center justify-center">
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white" />
                               </div>
 
                               {/* Role Card */}
-                              <div className="glass rounded-xl p-6 hover:bg-white/5 transition-all duration-300">
-                                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                  <div>
-                                    <h4 className="text-xl font-bold text-white mb-1">{role.title}</h4>
-                                    <div className="flex items-center gap-2 text-gray-400 text-sm">
-                                      <Calendar size={14} />
+                              <div className="glass rounded-xl p-4 sm:p-6 hover:bg-white/5 transition-all duration-300">
+                                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 sm:mb-4">
+                                  <div className="flex-1">
+                                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1">{role.title}</h4>
+                                    <div className="flex flex-wrap items-center gap-2 text-gray-400 text-xs sm:text-sm">
+                                      <Calendar size={12} className="sm:w-3.5 sm:h-3.5" />
                                       <span>{role.period}</span>
                                       {role.duration && (
                                         <>
@@ -287,17 +287,17 @@ export default function AboutPage() {
 
                                 {/* Description */}
                                 {role.description && (
-                                  <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                                  <p className="text-gray-300 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm">
                                     {role.description}
                                   </p>
                                 )}
 
                                 {/* Skills Tags */}
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                                   {role.skills.map((skill, skillIndex) => (
                                     <span
                                       key={skillIndex}
-                                      className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
+                                      className="px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
                                     >
                                       {skill}
                                     </span>
@@ -312,13 +312,13 @@ export default function AboutPage() {
                                         ...prev,
                                         [roleKey]: !prev[roleKey]
                                       }))}
-                                      className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mb-3"
+                                      className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mb-3 py-2 touch-manipulation w-full sm:w-auto"
                                     >
                                       <ChevronDown 
                                         size={16} 
-                                        className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                                        className={`transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
                                       />
-                                      <span className="font-medium text-sm">Tasks / Responsibilities</span>
+                                      <span className="font-medium text-xs sm:text-sm">Tasks / Responsibilities</span>
                                     </button>
                                     <AnimatePresence>
                                       {isExpanded && (

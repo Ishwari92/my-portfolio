@@ -26,7 +26,7 @@ const socialLinks = [
 
 export default function SocialIcons() {
   return (
-    <div className="flex gap-6 justify-center items-center">
+    <div className="flex gap-4 sm:gap-6 justify-center items-center">
       {socialLinks.map((social, index) => {
         const Icon = social.icon
         return (
@@ -40,11 +40,11 @@ export default function SocialIcons() {
             transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
             whileHover={{ scale: 1.2, y: -5 }}
             whileTap={{ scale: 0.95 }}
-            className={`text-gray-400 transition-all duration-300 ${social.color} p-3 rounded-lg glass hover:bg-white/5`}
+            className={`text-gray-400 transition-all duration-300 ${social.color} p-2.5 sm:p-3 rounded-lg glass hover:bg-white/5 touch-manipulation`}
             aria-label={social.name}
             title={social.href.startsWith('mailto:') ? 'pawarishwari797@gmail.com' : social.name}
           >
-            <Icon size={24} />
+            <Icon size={20} className="sm:w-6 sm:h-6" />
           </motion.a>
         )
       })}

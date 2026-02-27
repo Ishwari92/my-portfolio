@@ -14,7 +14,7 @@ export default function SecondaryButton({ children, onClick }: SecondaryButtonPr
       onClick={onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="px-8 py-3.5 glass border border-white/10 text-white rounded-xl font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-base shadow-premium"
+      className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 glass border border-white/10 text-white rounded-xl font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-sm sm:text-base shadow-premium touch-manipulation"
     >
       {children}
     </motion.button>
