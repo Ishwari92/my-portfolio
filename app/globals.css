@@ -37,20 +37,6 @@ body {
     min-height: 44px;
     min-width: 44px;
   }
-  
-  /* Better code block scrolling on mobile */
-  pre {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Better table scrolling on mobile */
-  table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-  }
 }
 
 /* Premium Typography */
@@ -134,42 +120,6 @@ p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-  
-  /* Mobile prose improvements */
-  @media (max-width: 640px) {
-    .prose {
-      font-size: 15px;
-      line-height: 1.75;
-    }
-    
-    .prose p {
-      margin-bottom: 1rem;
-    }
-    
-    .prose h1, .prose h2, .prose h3 {
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .prose code {
-      font-size: 13px;
-      word-break: break-word;
-    }
-    
-    .prose pre {
-      font-size: 12px;
-      padding: 1rem;
-      margin: 1.5rem 0;
-    }
-    
-    .prose ul, .prose ol {
-      padding-left: 1.25rem;
-    }
-    
-    .prose li {
-      margin-bottom: 0.5rem;
-    }
   }
 }
 
