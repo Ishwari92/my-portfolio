@@ -28,7 +28,7 @@ export default function ContactPage() {
           </div>
 
           <div className="glass-strong rounded-2xl p-8 md:p-12 shadow-premium">
-          <div className="space-y-8">
+            <div className="space-y-8">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-white/5 rounded-lg">
                 <Mail size={24} className="text-blue-400" />
@@ -89,6 +89,7 @@ export default function ContactPage() {
             <div className="pt-8 border-t border-white/10">
               <h3 className="text-xl font-semibold text-white mb-4">Connect with me</h3>
               <SocialIcons />
+            </div>
             </div>
           </div>
         </div>
